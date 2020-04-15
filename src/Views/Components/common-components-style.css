@@ -1,0 +1,28 @@
+.logo{
+  color: #745C97;
+  margin: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logo:hover
+.start-text{
+  color: #39375B;
+}
+
+.logo:hover
+.end-text{
+  color: #745C97;
+}
+
+.logo
+.start-text{
+  transition: all .3s;
+  color: #745C97;
+}
+
+.logo
+.end-text{
+  transition: all .3s;
+  color: #39375B;
+}
