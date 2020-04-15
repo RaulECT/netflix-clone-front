@@ -1,0 +1,37 @@
+.signin{
+  height: 100vh;
+}
+
+.signin__row{
+  height: 100%;
+}
+
+.signin__sidebar{
+  position: relative;
+  height: 100%;
+  background: rgba(116, 92, 151, 0.5);
+  padding: 3rem 1.5rem;
+}
+
+.signin__sidebar::after{
+  content: "";
+  background: url('../../assets/signin_sidebar.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  position: relative;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; 
+}
+
+.signin__quote{
+  color: #39375B;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+}
