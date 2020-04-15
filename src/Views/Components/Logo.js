@@ -1,14 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function Logo( onClick=() => {} ) {
+function Logo(onClick = () => { }) {
   return (
-    <h1 
-      className='logo'
-      onClick={ onClick }
-    >
-      <span className='start-text'>Net</span><span className='end-text'>Prime</span>
-    </h1>
-  ); 
+    <Link to='/'>
+      <h1
+        className='logo'
+        onClick={onClick}
+      >
+        <span className='start-text'>Net</span><span className='end-text'>Prime</span>
+      </h1>
+    </Link>
+  );
 };
 
 export default Logo;
