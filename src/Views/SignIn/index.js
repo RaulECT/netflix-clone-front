@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col } from 'antd';
 
 import Sidebar from './Components/Sidebar';
+import Content from './Components/Content';
 import './signin.css';
 
 function SignIn() {
@@ -13,7 +14,7 @@ function SignIn() {
           span={18}
           push={6}
         >
-          form
+          <Content />
         </Col>
         
         <Col 
