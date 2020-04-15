@@ -1,0 +1,27 @@
+.catalogue {
+  height: 100vh;
+}
+
+.catalogue__menu-item {
+  display: flex;
+}
+
+.catalogue__header {
+  display: flex;
+  background: transparent !important;
+  justify-content: space-between;
+}
+
+.catalogue__menu {
+  margin-left: 1rem !important;
+}
+
+.catalogue__avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.catalogue__avatar p {
+  margin-right: 1rem;
+}

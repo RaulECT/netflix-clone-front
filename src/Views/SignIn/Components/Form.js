@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Form,
   Input,
@@ -9,7 +10,7 @@ const FormItem = Form.Item;
 
 function SignInForm() {
 
-  return(
+  return (
     <div className='content__form'>
       <h1>¡Forma parte de NetPrime!</h1>
 
@@ -22,21 +23,21 @@ function SignInForm() {
         >
           <Input />
         </FormItem>
-        
+
         <FormItem
           name='last_name'
           label='Apellidos:'
         >
           <Input />
         </FormItem>
-        
+
         <FormItem
           name='password'
           label='Contraseña:'
         >
           <Input />
         </FormItem>
-        
+
         <FormItem
           name='email'
           label='E-mail:'
@@ -45,12 +46,14 @@ function SignInForm() {
         </FormItem>
 
         <FormItem>
-          <Button 
-            size='large'
-            className='submit-button'
-          >
-            Unirme
-          </Button>
+          <Link to='/catalogue'>
+            <Button
+              size='large'
+              className='submit-button'
+            >
+              Unirme
+            </Button>
+          </Link>
         </FormItem>
       </Form>
     </div>
