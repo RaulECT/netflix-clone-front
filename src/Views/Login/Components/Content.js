@@ -8,7 +8,7 @@ function Content(){
   return(
     <section className='content'>
       <p className='content__login'>
-        ¿Ya eres parte de nosotros? <Link to='/auth'>Inicia sesión</Link>
+        ¿Aun no eres parte de nosotros? <Link to='/signin'>Unete</Link>
       </p>
 
       <Form />

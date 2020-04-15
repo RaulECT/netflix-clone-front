@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Button } from 'antd';
+import { Layout, Button, } from 'antd';
 import { Link } from 'react-router-dom';
 
 import Logo from '../Components/Logo';
@@ -11,7 +11,9 @@ function Home() {
     <main className='home'>
       <Header className='header'>
         <Logo />
-        <Button type='link'>Iniciar Sesión</Button>
+        <Link to='/auth'>
+          <Button type='link'>Iniciar Sesión</Button>
+        </Link>
       </Header>
 
       <section className='home__presentation'>
