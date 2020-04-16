@@ -1,6 +1,7 @@
 import React from 'react';
 import { Layout, Menu } from 'antd';
 import { Link } from 'react-router-dom';
+import authHOC from '../../utils/authHOC';
 
 import Logo from '../Components/Logo';
 import Avatar from './Components/Avatar';
@@ -60,4 +61,4 @@ function Catalogue() {
   );
 }
 
-export default Catalogue;
+export default authHOC(Catalogue);

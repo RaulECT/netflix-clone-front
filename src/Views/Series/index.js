@@ -1,4 +1,5 @@
 import React from 'react';
+import authHOC from '../../utils/authHOC';
 
 import VideoList from '../Components/VideosList';
 
@@ -84,4 +85,4 @@ function Series() {
   )
 }
 
-export default Series;
+export default authHOC(Series);
