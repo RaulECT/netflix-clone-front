@@ -26,3 +26,10 @@
   transition: all .3s;
   color: #39375B;
 }
+
+.video-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: space-around;
+}

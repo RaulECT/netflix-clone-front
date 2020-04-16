@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout, Menu } from 'antd';
+import { Link } from 'react-router-dom';
 
 import Logo from '../Components/Logo';
 import Avatar from './Components/Avatar';
@@ -29,8 +30,18 @@ function Catalogue() {
             mode='horizontal'
             theme='light'
           >
-            <MenuItem key='mi__home'>Inicio</MenuItem>
-            <MenuItem key='mi__movies'>Películas</MenuItem>
+            <MenuItem key='mi__home'>
+              <Link to='/catalogue'>
+                Inicio
+              </Link>
+            </MenuItem>
+
+            <MenuItem key='mi__movies'>
+              <Link to='/catalogue/movies'>
+                Películas
+              </Link>
+            </MenuItem>
+
             <MenuItem key='mi__series'>Series</MenuItem>
           </Menu>
         </div>

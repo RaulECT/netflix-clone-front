@@ -1,8 +1,6 @@
 import React from 'react';
 
-import Recomendations from './Components/Recomendation';
 import VideosList from '../Components/VideosList';
-import './video-content.css'
 
 const videos = [
   {
@@ -77,14 +75,13 @@ const videos = [
   },
 ]
 
-function VideoContent() {
+function Movies() {
 
   return (
-    <section className='video-content'>
-      <Recomendations video={videos[1]} />
-      <VideosList videos={videos} title='Nuestro catalogo' />
+    <section>
+      <VideosList videos={videos} title='Peliculas' />
     </section>
   );
 }
 
-export default VideoContent;
+export default Movies
