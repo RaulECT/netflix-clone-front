@@ -42,7 +42,11 @@ function Catalogue() {
               </Link>
             </MenuItem>
 
-            <MenuItem key='mi__series'>Series</MenuItem>
+            <MenuItem key='mi__series'>
+              <Link to='/catalogue/series'>
+                Series
+              </Link>
+            </MenuItem>
           </Menu>
         </div>
 
