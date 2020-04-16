@@ -1,5 +1,7 @@
 .catalogue {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .catalogue__menu-item {

@@ -1,0 +1,52 @@
+.video-content {
+  flex: 1;
+}
+
+.recomendation{
+  height: 100%;
+}
+
+.video-content__trailer {
+    background-size: cover;
+    position: absolute;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+}
+
+.video-content__selection-info{
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.video-content__selection-info
+img {
+  height: 13rem;
+  margin-right: 1rem;
+}
+
+.video-content__selection-info
+h1 {
+  color: #fff;
+}
+
+.video-content__selection-info
+.view-button {
+  color: #fff;
+  background: #EE4266;
+  border: none;
+}
+
+.video-content__selection-info
+.view-button:hover {
+  background: #fff;
+  color: #EE4266;
+  border: 1px solid #EE4266;
+}

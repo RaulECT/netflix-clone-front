@@ -3,26 +3,10 @@ import { Layout, Menu } from 'antd';
 
 import Logo from '../Components/Logo';
 import Avatar from './Components/Avatar';
+import CatalogueRoutes from './CatalogueRoutes';
 import './catalogue.css';
 const { Header } = Layout;
 const MenuItem = Menu.Item;
-
-const videos = [
-  {
-    "_id": "5e8e80831525fc11d5187e2c",
-    "name": "Movie 1",
-    "image_cover_uri": "aksjdhaksjdhaskjdhakh",
-    "trailer_uri": "asjdhaksjdhaskjd",
-    "rating": 1.7708333333333335
-  },
-  {
-    "_id": "5e95054545d962083dfdc14d",
-    "name": "Movie 1",
-    "image_cover_uri": "https://res.cloudinary.com/dmclfzpce/image/upload/v1586825716/mjxx8bnfxalariwd0wxg.jpg",
-    "trailer_uri": "https://res.cloudinary.com/dmclfzpce/video/upload/v1586825780/mbbqnn3oxrekqg4mpqv9.mov",
-    "rating": 0
-  },
-]
 
 const user = {
   first_name: "John",
@@ -55,6 +39,8 @@ function Catalogue() {
           <Avatar user={user} />
         </div>
       </Header>
+
+      <CatalogueRoutes />
     </main>
   );
 }
