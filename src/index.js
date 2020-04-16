@@ -1,19 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import Routes from './Routes';
+import client from './graphql';
+import { ApolloProvider } from 'react-apollo-hooks';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import './Views/Components/common-components-style.css'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <Routes />
-    </Router>
-  </React.StrictMode>,
+  <ApolloProvider client={client}>
+    <React.StrictMode>
+      <Router>
+        <Routes />
+      </Router>
+    </React.StrictMode>
+  </ApolloProvider>,
   document.getElementById('root')
 );
 
