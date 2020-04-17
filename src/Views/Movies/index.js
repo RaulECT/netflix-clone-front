@@ -1,87 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import authHOC from '../../utils/authHOC';
+import { useQuery } from 'react-apollo-hooks';
+import gql from 'graphql-tag';
+import { Skeleton } from 'antd';
 
 import VideosList from '../Components/VideosList';
 
-const videos = [
-  {
-    "_id": "5e95054545d962083dfdc14d",
-    "name": "Movie 1",
-    "image_cover_uri": "https://res.cloudinary.com/dmclfzpce/image/upload/v1586825716/mjxx8bnfxalariwd0wxg.jpg",
-    "trailer_uri": "https://res.cloudinary.com/dmclfzpce/video/upload/v1586825780/mbbqnn3oxrekqg4mpqv9.mov",
-    "rating": 0
-  },
-  {
-    "_id": "5e95054545d962083dfdc14d",
-    "name": "Movie 1",
-    "image_cover_uri": "https://res.cloudinary.com/dmclfzpce/image/upload/v1586825716/mjxx8bnfxalariwd0wxg.jpg",
-    "trailer_uri": "https://res.cloudinary.com/dmclfzpce/video/upload/v1586825780/mbbqnn3oxrekqg4mpqv9.mov",
-    "rating": 0
-  },
-  {
-    "_id": "5e95054545d962083dfdc14d",
-    "name": "Movie 1",
-    "image_cover_uri": "https://res.cloudinary.com/dmclfzpce/image/upload/v1586825716/mjxx8bnfxalariwd0wxg.jpg",
-    "trailer_uri": "https://res.cloudinary.com/dmclfzpce/video/upload/v1586825780/mbbqnn3oxrekqg4mpqv9.mov",
-    "rating": 0
-  },
-  {
-    "_id": "5e95054545d962083dfdc14d",
-    "name": "Movie 1",
-    "image_cover_uri": "https://res.cloudinary.com/dmclfzpce/image/upload/v1586825716/mjxx8bnfxalariwd0wxg.jpg",
-    "trailer_uri": "https://res.cloudinary.com/dmclfzpce/video/upload/v1586825780/mbbqnn3oxrekqg4mpqv9.mov",
-    "rating": 0
-  },
-  {
-    "_id": "5e95054545d962083dfdc14d",
-    "name": "Movie 1",
-    "image_cover_uri": "https://res.cloudinary.com/dmclfzpce/image/upload/v1586825716/mjxx8bnfxalariwd0wxg.jpg",
-    "trailer_uri": "https://res.cloudinary.com/dmclfzpce/video/upload/v1586825780/mbbqnn3oxrekqg4mpqv9.mov",
-    "rating": 0
-  },
-  {
-    "_id": "5e95054545d962083dfdc14d",
-    "name": "Movie 1",
-    "image_cover_uri": "https://res.cloudinary.com/dmclfzpce/image/upload/v1586825716/mjxx8bnfxalariwd0wxg.jpg",
-    "trailer_uri": "https://res.cloudinary.com/dmclfzpce/video/upload/v1586825780/mbbqnn3oxrekqg4mpqv9.mov",
-    "rating": 0
-  },
-  {
-    "_id": "5e95054545d962083dfdc14d",
-    "name": "Movie 1",
-    "image_cover_uri": "https://res.cloudinary.com/dmclfzpce/image/upload/v1586825716/mjxx8bnfxalariwd0wxg.jpg",
-    "trailer_uri": "https://res.cloudinary.com/dmclfzpce/video/upload/v1586825780/mbbqnn3oxrekqg4mpqv9.mov",
-    "rating": 0
-  },
-  {
-    "_id": "5e95054545d962083dfdc14d",
-    "name": "Movie 1",
-    "image_cover_uri": "https://res.cloudinary.com/dmclfzpce/image/upload/v1586825716/mjxx8bnfxalariwd0wxg.jpg",
-    "trailer_uri": "https://res.cloudinary.com/dmclfzpce/video/upload/v1586825780/mbbqnn3oxrekqg4mpqv9.mov",
-    "rating": 0
-  },
-  {
-    "_id": "5e95054545d962083dfdc14d",
-    "name": "Movie 1",
-    "image_cover_uri": "https://res.cloudinary.com/dmclfzpce/image/upload/v1586825716/mjxx8bnfxalariwd0wxg.jpg",
-    "trailer_uri": "https://res.cloudinary.com/dmclfzpce/video/upload/v1586825780/mbbqnn3oxrekqg4mpqv9.mov",
-    "rating": 0
-  },
-  {
-    "_id": "5e95054545d962083dfdc14d",
-    "name": "Movie 1",
-    "image_cover_uri": "https://res.cloudinary.com/dmclfzpce/image/upload/v1586825716/mjxx8bnfxalariwd0wxg.jpg",
-    "trailer_uri": "https://res.cloudinary.com/dmclfzpce/video/upload/v1586825780/mbbqnn3oxrekqg4mpqv9.mov",
-    "rating": 0
-  },
-]
+const MOVIES = gql`
+  query getAllMovies {
+    getMovies {
+      _id
+      name
+      video_uri
+      image_cover_uri
+      trailer_uri
+    }
+  }
+`
 
 function Movies() {
+  const { loading, data } = useQuery(MOVIES);
+  const [ movies, updateMovies ] = useState([]);
+
+  useEffect( () => {
+    if ( data ) {
+      updateMovies( data.getMovies )
+    }    
+  }, [data] )
 
   return (
-    <section>
-      <VideosList videos={videos} title='Peliculas' />
-    </section>
+    <Skeleton active loading={ loading }>
+      <section>
+        <VideosList videos={movies} title='Peliculas' />
+      </section>
+    </Skeleton>
   );
 }
 
