@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Logo(onClick = () => { }) {
+function Logo({ to = '/', onClick=() => {} }) {
   return (
-    <Link to='/'>
+    <Link to={to}>
       <h1
         className='logo'
         onClick={onClick}

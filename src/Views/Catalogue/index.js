@@ -31,7 +31,7 @@ function Catalogue({ history }) {
     <main className='catalogue'>
       <Header className='catalogue__header'>
         <div className='catalogue__menu-item'>
-          <Logo />
+          <Logo to='/catalogue' />
 
           <Menu
             className='catalogue__menu'
