@@ -31,7 +31,6 @@ function LoginForm({ history }) {
     if ( res ) {
       const { data: { login } } = res;
       sessionStorage.setItem( 'appToken', login.token )
-      console.log(history)
       history.push('./catalogue')
     }
   };
