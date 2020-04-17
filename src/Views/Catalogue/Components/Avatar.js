@@ -3,12 +3,12 @@ import { Avatar as AvatarImg, Menu, Dropdown } from 'antd';
 
 const MenuItem = Menu.Item;
 
-function Avatar({ user }) {
+function Avatar({ user, onLogout }) {
   const { first_name, last_name, profile_img } = user;
   const menu = (
     <Menu>
       <MenuItem>
-        <a>Cerrar sesión</a>
+        <a onClick={onLogout}>Cerrar sesión</a>
       </MenuItem>
     </Menu>
   );

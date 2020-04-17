@@ -18,7 +18,14 @@ const user = {
   profile_img: "http://gravatar.com/avatar/61409aa1fd47d4a5332de23cbf59a36f?d=identicon"
 }
 
-function Catalogue() {
+function Catalogue({ history }) {
+  const userSession = sessionStorage.getItem( 'user' )
+  const userLogged = userSession ? JSON.parse( userSession ) : user;
+
+  function logout() {
+    sessionStorage.removeItem( 'appToken' );
+    history.push('/')
+  }
 
   return (
     <main className='catalogue'>
@@ -52,7 +59,7 @@ function Catalogue() {
         </div>
 
         <div>
-          <Avatar user={user} />
+          <Avatar user={userLogged} onLogout={logout} />
         </div>
       </Header>
 
