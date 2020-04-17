@@ -4,11 +4,12 @@ import { Divider, Result } from 'antd'
 import VideoCard from './VideoCard';
 
 function VideoList({ videos, title }) {
-  const videoCards = videos.map(({ _id, name, image_cover_uri }) =>
+  const videoCards = videos.map(({ _id, name, image_cover_uri, trailer_uri }) =>
     <VideoCard
       key={`vc__${_id}`}
       cover={image_cover_uri}
       name={name}
+      video={trailer_uri}
     />);
 
   return videos.length !== 0

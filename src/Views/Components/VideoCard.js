@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from 'antd';
-import { PlayCircleOutlined } from '@ant-design/icons' 
+import { CloudDownloadOutlined } from '@ant-design/icons' 
 
 const { Meta } = Card;
 
@@ -16,7 +16,9 @@ function VideoCard({ video, cover, name }) {
         />
       }
       actions={[
-        <PlayCircleOutlined key={`ply__${name}`} />
+        <a href={video}>
+          <CloudDownloadOutlined key={`ply__${name}`} />
+        </a>
       ]}
     >
       <Meta 

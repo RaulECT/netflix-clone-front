@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'antd'
+import { CloudDownloadOutlined } from '@ant-design/icons'
 
 const defaultVideo = {
   "_id": "5e95054545d962083dfdc14d",
@@ -25,7 +26,15 @@ function Recomendation({ video = defaultVideo }){
 
         <div>
           <h1>{name}</h1>
-          <Button className='view-button' size='large'>Ver ahora</Button>
+          <a href={trailer_uri}>
+            <Button 
+              className='view-button' 
+              size='large'
+              icon={ <CloudDownloadOutlined /> }
+            >
+              Descargar
+            </Button>
+          </a>
         </div>
       </div>
     </div>

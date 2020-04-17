@@ -40,10 +40,10 @@ function VideoContent() {
     }
   }, [data] )
 
-  function getRandomVideo() {
-    if ( allVideos.length !== 0 ) {
-      const randomIndex = Math.floor( Math.random * ( allVideos.length - 1 ) );
-      return allVideos[randomIndex];
+  function getRandomVideo( v ) {
+    if ( v.length !== 0 ) {
+      const randomIndex = Math.floor( Math.random() * ( v.length ) );
+      return v[randomIndex];
     }
 
     return videos[1]
@@ -52,7 +52,7 @@ function VideoContent() {
   return (
     <Skeleton active loading={loading}>
       <section className='video-content'>
-        <Recomendations video={getRandomVideo()} />
+        <Recomendations video={getRandomVideo(allVideos)} />
         <VideosList videos={allVideos} title='Nuestro catalogo' />
       </section>
     </Skeleton>
